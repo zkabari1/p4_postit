@@ -12,6 +12,7 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
 
     @IBOutlet var table: UITableView!
     
+    @IBOutlet var enterpost: UITextField!
     @IBOutlet var new: UIButton!
     
     var items: [String] = ["We", "Heart", "Swift"]
@@ -60,7 +61,18 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
         }
         task.resume()*/
     }
-
+    func textFieldShouldReturn(textFeild: UITextField) -> Bool {
+        
+        textFeild.resignFirstResponder()
+        //or
+        //self.view.endEditing(true)
+        return true
+    }
+  
+    @IBAction func newpost(_ sender: Any) {
+        let new = enterpost.text
+        items.append(new!)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
