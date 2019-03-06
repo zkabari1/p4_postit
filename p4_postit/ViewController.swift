@@ -8,12 +8,31 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSource{
 
+    @IBOutlet var table: UITableView!
+    
+    @IBOutlet var new: UIButton!
+    
+    var items: [String] = ["We", "Heart", "Swift"]
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("You selected cell #\(indexPath.row)!")
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.items.count;
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell:UITableViewCell=self.table.dequeueReusableCell(withIdentifier: "cell")! as UITableViewCell
+        cell.textLabel?.text=self.items[indexPath.row]
+        return cell
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         // Do any additional setup after loading the view, typically from a nib.
-        let myurl = NSURL(string:"https://github.com/zkabari1/p4_postit/blob/master/server.php");
+       /* let myurl = NSURL(string:"https://github.com/zkabari1/p4_postit/blob/master/server.php");
         let request = NSMutableURLRequest(url : myurl! as URL);
         request.httpMethod="POST"
         let poststring = "firstName=James&lastName=Bond";
@@ -37,9 +56,9 @@ class ViewController: UIViewController {
             }catch{
             print(error)
             }
-            
+         
         }
-        task.resume()
+        task.resume()*/
     }
 
     override func didReceiveMemoryWarning() {
