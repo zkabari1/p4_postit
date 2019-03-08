@@ -18,7 +18,7 @@
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -32,18 +32,15 @@
                                 <rect key="frame" x="0.0" y="127" width="375" height="390"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Q9N-5q-nZl"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="DsQ-9O-Dvp"/>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="h0T-jg-rY3"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="iMG-ji-5fB"/>
                                 </connections>
                             </tableView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add New Post" textAlignment="natural" minimumFontSize="30" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="305-6i-Jyq">
                                 <rect key="frame" x="36" y="572" width="260" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="vad-8Z-wcs"/>
-                                </connections>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Jw-YT-aZ6">
                                 <rect key="frame" x="282" y="572" width="93" height="22"/>
@@ -54,7 +51,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <state key="normal" title="+"/>
                                 <connections>
-                                    <action selector="newpost:" destination="BYZ-38-t0r" eventType="touchDown" id="Rco-So-0Nc"/>
+                                    <action selector="newpost:" destination="BYZ-38-t0r" eventType="touchDown" id="cgm-I5-f1P"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -75,9 +72,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="enterpost" destination="305-6i-Jyq" id="A0F-Lg-SB5"/>
-                        <outlet property="new" destination="3Jw-YT-aZ6" id="nMj-tj-92M"/>
-                        <outlet property="table" destination="SCZ-9A-QJa" id="dcv-lm-hca"/>
+                        <outlet property="enterpost" destination="305-6i-Jyq" id="Pqv-nd-JQd"/>
+                        <outlet property="new" destination="3Jw-YT-aZ6" id="CLa-qi-hnw"/>
+                        <outlet property="table" destination="SCZ-9A-QJa" id="r6n-nf-r9r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -7,15 +7,15 @@
 //
 
 import UIKit
-
+//class ViewController:UIViewController{
 class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSource{
 
-    @IBOutlet var table: UITableView!
+   @IBOutlet var table: UITableView!
     
     @IBOutlet var enterpost: UITextField!
     @IBOutlet var new: UIButton!
     
-    var items: [String] = ["We", "Heart", "Swift"]
+   var items: [String] = ["We", "Heart", "Swift"]
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("You selected cell #\(indexPath.row)!")
@@ -33,45 +33,49 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
         super.viewDidLoad()
         self.table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         // Do any additional setup after loading the view, typically from a nib.
-       /* let myurl = NSURL(string:"https://github.com/zkabari1/p4_postit/blob/master/server.php");
-        let request = NSMutableURLRequest(url : myurl! as URL);
-        request.httpMethod="POST"
-        let poststring = "firstName=James&lastName=Bond";
-        request.httpBody = poststring.data(using: String.Encoding.utf8)
         
-        let task = URLSession.shared.dataTask(with: request as URLRequest) {
-            data, response, error in
-            if error != nil
-            {
-             print("error=\(error)")
-                return
-            }
-            print("response = \(response)")
-            do{
-            let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? NSDictionary
-                if let parseJSON = json{
-                let firstName = parseJSON["firstName"] as? String
-                    print("firstname:\(firstName)")
-                }
-                
-            }catch{
-            print(error)
-            }
-         
-        }
-        task.resume()*/
     }
-    func textFieldShouldReturn(textFeild: UITextField) -> Bool {
+  /* func textFieldShouldReturn(textFeild: UITextField) -> Bool {
         
         textFeild.resignFirstResponder()
         //or
         //self.view.endEditing(true)
         return true
-    }
+    }*/
   
     @IBAction func newpost(_ sender: Any) {
         let new = enterpost.text
-        items.append(new!)
+        let myurl = NSURL(string:"https://cs.binghamton.edu/~zkabari1/server.php");
+        let request = NSMutableURLRequest(url : myurl! as URL);
+        request.httpMethod="POST"
+        //let poststring = "firstName=James&lastName=Bond";
+        request.httpBody = new?.data(using: String.Encoding.utf8)
+        
+        let task = URLSession.shared.dataTask(with: request as URLRequest) {
+            data, response, error in
+            if error != nil
+            {
+                print("error=\(error)")
+                return
+            }
+            print("response = \(response)")
+            do{
+                let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? NSDictionary
+                if let parseJSON = json{
+                    let firstName = parseJSON["firstName"] as? String
+                    print("firstname:\(firstName)")
+                }
+                
+            }catch{
+                print(error)
+            }
+            
+        }
+        task.resume()
+        //items.append(new!)
+    }
+   func touchesBegan(_touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
