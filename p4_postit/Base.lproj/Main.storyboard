@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="17G65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="17G5019" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -24,26 +24,40 @@
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Edn-2d-MfS">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <color key="barTintColor" red="1" green="0.57757358168660522" blue="0.76956725672747206" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="35"/>
+                                    <color key="textColor" red="0.086000392950000004" green="0.078856271869999994" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
+                                </textAttributes>
                                 <items>
                                     <navigationItem title="Post Its" id="bP1-u1-gt2"/>
                                 </items>
                             </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SCZ-9A-QJa">
-                                <rect key="frame" x="0.0" y="127" width="375" height="390"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="SCZ-9A-QJa">
+                                <rect key="frame" x="16" y="102" width="343" height="459"/>
+                                <color key="backgroundColor" red="0.63754591530000004" green="0.97450244890000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.086000392950000004" green="0.078856271869999994" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <edgeInsets key="layoutMargins" top="8" left="30" bottom="8" right="16"/>
+                                <color key="separatorColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="sectionIndexColor" red="0.086000392948757609" green="0.078856271868103733" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="sectionIndexBackgroundColor" red="0.63754591530000004" green="0.97450244890000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="h0T-jg-rY3"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="iMG-ji-5fB"/>
                                 </connections>
                             </tableView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add New Post" textAlignment="natural" minimumFontSize="30" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="305-6i-Jyq">
-                                <rect key="frame" x="36" y="572" width="260" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add New Post" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="30" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="305-6i-Jyq">
+                                <rect key="frame" x="32" y="602" width="260" height="30"/>
+                                <color key="textColor" red="0.086000392950000004" green="0.078856271869999994" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="8bC-Xf-vdC" id="WPX-hs-8bm"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Jw-YT-aZ6">
-                                <rect key="frame" x="282" y="572" width="93" height="22"/>
+                                <rect key="frame" x="282" y="606" width="93" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="6ay-JA-Fyx"/>
                                     <constraint firstAttribute="width" constant="93" id="f6l-DZ-2Cx"/>
@@ -55,19 +69,20 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.63754591530800964" green="0.97450244887559312" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.086000392950000004" green="0.078856271869999994" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Edn-2d-MfS" firstAttribute="leading" secondItem="SCZ-9A-QJa" secondAttribute="leading" id="JaF-Vf-Zvm"/>
-                            <constraint firstItem="SCZ-9A-QJa" firstAttribute="top" secondItem="Edn-2d-MfS" secondAttribute="bottom" constant="55" id="KtM-EA-gPk"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="305-6i-Jyq" secondAttribute="trailing" constant="63" id="NT9-7r-NwF"/>
+                            <constraint firstItem="Edn-2d-MfS" firstAttribute="leading" secondItem="SCZ-9A-QJa" secondAttribute="leading" constant="-16" id="JaF-Vf-Zvm"/>
+                            <constraint firstItem="SCZ-9A-QJa" firstAttribute="top" secondItem="Edn-2d-MfS" secondAttribute="bottom" constant="30" id="KtM-EA-gPk"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="305-6i-Jyq" secondAttribute="trailing" constant="67" id="NT9-7r-NwF"/>
                             <constraint firstItem="Edn-2d-MfS" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="Rj6-4t-K93"/>
-                            <constraint firstItem="305-6i-Jyq" firstAttribute="top" secondItem="SCZ-9A-QJa" secondAttribute="bottom" constant="55" id="aAx-mR-dpT"/>
-                            <constraint firstItem="305-6i-Jyq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="bYh-Vb-k6w"/>
-                            <constraint firstItem="Edn-2d-MfS" firstAttribute="trailing" secondItem="SCZ-9A-QJa" secondAttribute="trailing" id="e53-s7-rla"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="305-6i-Jyq" secondAttribute="bottom" constant="65" id="md4-2c-lbz"/>
+                            <constraint firstItem="305-6i-Jyq" firstAttribute="top" secondItem="SCZ-9A-QJa" secondAttribute="bottom" constant="41" id="aAx-mR-dpT"/>
+                            <constraint firstItem="305-6i-Jyq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="16" id="bYh-Vb-k6w"/>
+                            <constraint firstItem="Edn-2d-MfS" firstAttribute="trailing" secondItem="SCZ-9A-QJa" secondAttribute="trailing" constant="16" id="e53-s7-rla"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="305-6i-Jyq" secondAttribute="bottom" constant="35" id="md4-2c-lbz"/>
                             <constraint firstItem="Edn-2d-MfS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="pso-RY-faA"/>
-                            <constraint firstItem="SCZ-9A-QJa" firstAttribute="trailing" secondItem="3Jw-YT-aZ6" secondAttribute="trailing" id="rjK-F0-lEo"/>
-                            <constraint firstItem="305-6i-Jyq" firstAttribute="top" secondItem="3Jw-YT-aZ6" secondAttribute="top" id="s27-aT-ZiT"/>
+                            <constraint firstItem="SCZ-9A-QJa" firstAttribute="trailing" secondItem="3Jw-YT-aZ6" secondAttribute="trailing" constant="-16" id="rjK-F0-lEo"/>
+                            <constraint firstItem="305-6i-Jyq" firstAttribute="top" secondItem="3Jw-YT-aZ6" secondAttribute="top" constant="-4" id="s27-aT-ZiT"/>
                             <constraint firstAttribute="trailing" secondItem="Edn-2d-MfS" secondAttribute="trailing" id="sCh-UN-lxP"/>
                         </constraints>
                     </view>
@@ -79,7 +94,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-926" y="134"/>
+            <point key="canvasLocation" x="-927.20000000000005" y="133.5832083958021"/>
         </scene>
     </scenes>
 </document>
