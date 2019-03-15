@@ -7,7 +7,7 @@
 //
 
 import UIKit
-//class ViewController:UIViewController{
+
 class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSource,UITextFieldDelegate{
 
    @IBOutlet var table: UITableView!
@@ -15,11 +15,8 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
     @IBOutlet var enterpost: UITextField!
     @IBOutlet var new: UIButton!
     
-   var items: [String] = ["We", "Heart", "Swiftttttttttttttttttttttttttttttttttttttttttttttt"]
+   var items: [String] = ["Welcome to Post-Its", "To add new post - enter some text in the below textbox and click on + button", "To delete any post - swipe left to right on it and press delete","To refresh list- drag it down and release"]
     
-  /*  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("You selected cell #\(indexPath.row)!")
-    }*/
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.items.count;
     }
@@ -33,15 +30,18 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
         cell.textLabel?.numberOfLines=0
         cell.textLabel?.textColor=UIColor .blue
         cell.textLabel?.font=UIFont (name: "BradleyHandITCTT-Bold", size: 20)
-        cell.backgroundColor=UIColor .clear
-        //cell.layer.borderWidth=10
-        //cell.layer.borderColor=UIColor .groupTableViewBackground.cgColor
+        cell.backgroundColor=UIColor .white
+        cell.layer.borderWidth=1
+        cell.layer.borderColor=UIColor .black.cgColor
+        cell.layer.cornerRadius=10
         
         return cell
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor=UIColor(patternImage: UIImage(named:"backgrnd.jpg")!)
+        table.backgroundColor=UIColor.clear
         self.table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         table.estimatedRowHeight=44
         table.rowHeight=UITableViewAutomaticDimension
@@ -77,15 +77,16 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
                     print("New Post:\(newPost)")
                     self.items.append(newPost!)
                 }
-                
-            }catch{
-                print(error)
-            }
+           }catch{
+                let alert = UIAlertController(title: "Hey There!", message:"You cannot enter empty post",preferredStyle: .alert)
+                let action = UIAlertAction(title: "Close", style: .default, handler: nil)
+                alert.addAction(action)
+                self.present(alert, animated: true, completion: nil)
+          }
             
         }
-        task.resume()
-        //items.append(new!)
-        
+                   task.resume()
+     
     }
     lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
@@ -95,13 +96,18 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
         return refreshControl
     }()
     @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
-        // Do some reloading of data and update the table view's data source
-        // Fetch more objects from a web service, for example...
-        
-        // Simply adding an object to the data source for this example
-        
         self.table.reloadData()
         refreshControl.endRefreshing()
+    }
+    
+   func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let delete = UITableViewRowAction(style: .destructive, title: "delete") { (action, indexPath) in
+            self.items.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+        
+       delete.backgroundColor=UIColor.green
+        return [delete]
     }
 
     

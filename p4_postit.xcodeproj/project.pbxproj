@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2054C20F223BD7B30050E28D /* backgrnd.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2054C20E223BD7B30050E28D /* backgrnd.jpg */; };
+		2054C211223BD7BC0050E28D /* pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 2054C210223BD7BC0050E28D /* pin.png */; };
 		20BC1BA7222D69C20066760D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BC1BA6222D69C20066760D /* AppDelegate.swift */; };
 		20BC1BA9222D69C20066760D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BC1BA8222D69C20066760D /* ViewController.swift */; };
 		20BC1BAC222D69C20066760D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20BC1BAA222D69C20066760D /* Main.storyboard */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2054C20E223BD7B30050E28D /* backgrnd.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backgrnd.jpg; sourceTree = "<group>"; };
+		2054C210223BD7BC0050E28D /* pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin.png; sourceTree = "<group>"; };
 		20BC1BA3222D69C20066760D /* p4_postit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = p4_postit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20BC1BA6222D69C20066760D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20BC1BA8222D69C20066760D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,7 +61,9 @@
 				20BC1BA6222D69C20066760D /* AppDelegate.swift */,
 				20BC1BA8222D69C20066760D /* ViewController.swift */,
 				20BC1BAA222D69C20066760D /* Main.storyboard */,
+				2054C20E223BD7B30050E28D /* backgrnd.jpg */,
 				20BC1BAD222D69C20066760D /* Assets.xcassets */,
+				2054C210223BD7BC0050E28D /* pin.png */,
 				20BC1BAF222D69C20066760D /* LaunchScreen.storyboard */,
 				20BC1BB2222D69C20066760D /* Info.plist */,
 			);
@@ -126,6 +132,8 @@
 				20BC1BB1222D69C20066760D /* LaunchScreen.storyboard in Resources */,
 				20BC1BAE222D69C20066760D /* Assets.xcassets in Resources */,
 				20BC1BAC222D69C20066760D /* Main.storyboard in Resources */,
+				2054C211223BD7BC0050E28D /* pin.png in Resources */,
+				2054C20F223BD7B30050E28D /* backgrnd.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +307,7 @@
 				20BC1BB7222D69C20066760D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
