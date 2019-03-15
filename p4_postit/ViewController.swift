@@ -106,7 +106,7 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
         
-       delete.backgroundColor=UIColor.green
+       delete.backgroundColor=UIColor.red
         return [delete]
     }
 
